@@ -16,13 +16,13 @@ MARGIN = {"t": 30, "r": 400, "b": 90, "l": 40}
 LINE_COLOUR = "#798286" #"#A6ACAF"
 PRIMARY_COLOUR = "#076b78" #"#1F618D"
 FONT_COLOR = "#6d7578"
-FONT_SIZE = 16
+FONT_SIZE = 18
 TITLE_COLOUR = "#303436"
-TITLE_SIZE = 20
+TITLE_SIZE = 22
 PLOTBG_COLOUR = "#c9cdcf"  #"white"
 SECONDARY_COLOUR = "#0cbdd4" #"#3498DB"
-
-
+WIDTH_SINGLE = 1280
+HEIGHT_SINGLE = 720
 
 ############################
 #### Transform the Data ####
@@ -180,11 +180,11 @@ fig.add_annotation(text = 'Created by: Tom Price <br>Data source: "Cost of Livin
                     xanchor = "left",
                     yanchor = "bottom",
                     showarrow = False,
-                    font = dict(size = 12))
+                    font = dict(size = FONT_SIZE - 4))
 
 
 
-fig.show()
+fig.write_image("slopegraph.png", scale = 1, width = WIDTH_SINGLE, height = HEIGHT_SINGLE)
 
 
 
