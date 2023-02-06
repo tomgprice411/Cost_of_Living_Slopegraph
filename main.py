@@ -13,14 +13,14 @@ df = pd.read_csv("cost_of_living.csv")
 ################################
 
 MARGIN = {"t": 30, "r": 400, "b": 90, "l": 40}
-LINE_COLOUR = "#A6ACAF"
-PRIMARY_COLOUR = "#1F618D"
+LINE_COLOUR = "#798286" #"#A6ACAF"
+PRIMARY_COLOUR = "#076b78" #"#1F618D"
 FONT_COLOR = "#6d7578"
 FONT_SIZE = 16
 TITLE_COLOUR = "#303436"
 TITLE_SIZE = 20
-PLOTBG_COLOUR = "white"
-SECONDARY_COLOUR = "#3498DB"
+PLOTBG_COLOUR = "#c9cdcf"  #"white"
+SECONDARY_COLOUR = "#0cbdd4" #"#3498DB"
 
 
 
@@ -95,10 +95,13 @@ for item in df_2["item"].unique():
                             ))
 
 #customise the layout of the scatter plot
-fig.update_layout(plot_bgcolor = PLOTBG_COLOUR, showlegend = False,
+fig.update_layout(plot_bgcolor = PLOTBG_COLOUR, 
+                    paper_bgcolor = PLOTBG_COLOUR,
+                    showlegend = False,
                     margin = MARGIN,
                     font = dict(color = FONT_COLOR, size = FONT_SIZE),
                     yaxis = dict(visible = False, range = [0,30]),
+                    xaxis = dict(gridcolor = PLOTBG_COLOUR)
                     )
 
 #add annotations to the scatter plot
@@ -172,7 +175,7 @@ fig.add_annotation(text = 'Created by: Tom Price <br>Data source: "Cost of Livin
                     xref = "paper",
                     yref = "paper",
                     x = -0.005,
-                    y = -0.11,
+                    y = -0.13,
                     align = "left",
                     xanchor = "left",
                     yanchor = "bottom",
